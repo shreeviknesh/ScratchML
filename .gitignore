@@ -9,6 +9,7 @@ __pycache__/
 # Other
 .vscode/
 scratchml.egg-info
+test.py
 
 # Distribution / packaging
 .Python
