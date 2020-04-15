@@ -10,6 +10,7 @@ __pycache__/
 .vscode/
 scratchml.egg-info
 test.py
+.pypirc
 
 # Distribution / packaging
 .Python
