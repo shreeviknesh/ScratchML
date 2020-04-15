@@ -34,7 +34,7 @@ class MultipleLinearRegression:
         except np.linalg.LinAlgError:
             self.coef_ = np.dot(np.dot(np.linalg.pinv(np.dot(X.transpose(), X)), X.transpose()), y)
         
-        self.epsi_ = y - np.dot(X, self.coef_)
+        self.epsi_ = y - np.dot(X, self.coef_) # The residuals
 
         return self
 
@@ -49,7 +49,7 @@ class MultipleLinearRegression:
         """
 
         X = self.__prepare_x(np.array(X, 'float64'))
-        return (np.dot(X, self.coef_) + self.epsi_)
+        return (np.dot(X, self.coef_)) # + self.epsi_
 
     def evaluate(self, X, y, loss='mse'):
         """Evaluate error & r2 score of the linear model.
