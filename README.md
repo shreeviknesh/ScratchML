@@ -8,6 +8,10 @@ A python package with implementations of Machine Learning algorithms from scratc
 1. *Simple Linear Regression* (`scratchml.regression.SimpleLinearRegression`)
 2. *Multiple Linear Regression* (`scratchml.regression.MultipleLinearRegression`)
 
+
+### Classification:
+1. *Logistic Regression* (`scratchml.classification.LogisticRegression`)
+
 ----
 ## Installing:
 The project is available as a package on PyPI - [ScratchML](https://pypi.org/project/scratchml/)
