@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from ..Loss import mean_squared_error, mean_absolute_error, root_mean_squared_error
-from ..ScratchMLExceptions import InvalidValueException, ModelNotTrainedException
+from ..utils import mean_squared_error, mean_absolute_error, root_mean_squared_error
+from ..utils import InvalidValueException, ModelNotTrainedException
 
 class SimpleLinearRegression:
     """Simple Linear Regression algorithm.

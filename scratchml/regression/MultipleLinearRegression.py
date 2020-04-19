@@ -1,8 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-from ..Loss import mean_squared_error, mean_absolute_error, root_mean_squared_error
-from ..ScratchMLExceptions import InvalidValueException, ModelNotTrainedException
+from ..utils import mean_squared_error, mean_absolute_error, root_mean_squared_error
+from ..utils import InvalidValueException, ModelNotTrainedException
 
 class MultipleLinearRegression:
     """Multiple Linear Regression algorithm.
@@ -33,9 +33,9 @@ class MultipleLinearRegression:
         y = np.array(y, 'float64')
         
         try:
-            self.coef_ = np.dot(np.dot(np.linalg.inv(np.dot(X.transpose(), X)), X.transpose()), y)
+            self.coef_ = np.dot(np.dot(np.linalg.inv(np.dot(X.T, X)), X.T), y)
         except np.linalg.LinAlgError:
-            self.coef_ = np.dot(np.dot(np.linalg.pinv(np.dot(X.transpose(), X)), X.transpose()), y)
+            self.coef_ = np.dot(np.dot(np.linalg.pinv(np.dot(X.T, X)), X.T), y)
         
         self.epsi_ = y - np.dot(X, self.coef_) # The residuals
         self.__trained = True
@@ -91,7 +91,6 @@ class MultipleLinearRegression:
         if loss in available_losses.keys():
             error = available_losses[loss](y, yhat)
             deviation_from_mean = available_losses[loss](y, [np.mean(y)] * y.shape[0])
-
             r2 = (deviation_from_mean - error) / deviation_from_mean
 
         else:
@@ -102,7 +101,7 @@ class MultipleLinearRegression:
             raise InvalidValueException(message)
         
         return {
-            loss: error,
+            'loss': error,
             'score': r2 
         }
 
