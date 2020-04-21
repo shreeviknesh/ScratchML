@@ -1,14 +1,16 @@
 from setuptools import setup, find_packages
 import shutil
+import os
 
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-shutil.rmtree('dist')
+if 'dist' in os.listdir():
+    shutil.rmtree('dist')
 
 setup(
     name="scratchml", 
-    version="0.3",
+    version="0.3.2",
     author="Shreeviknesh Sankaran",
     author_email="shreeviknesh@gmail.com",
     description="A python package with implementations of Machine Learning algorithms from scratch.",

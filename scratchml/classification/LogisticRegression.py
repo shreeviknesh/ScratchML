@@ -16,7 +16,7 @@ class LogisticRegression:
 
     def __initialize_weights(self, n_features):
         self.coef_ = np.zeros((1, n_features))
-        self.b = 0
+        self.bias_ = 0
 
     def fit(self, X, y):
         """Fit simple logistic regression classifier model & calculate the coefficients.
@@ -36,7 +36,7 @@ class LogisticRegression:
 
         self.__initialize_weights(X.shape[1])
 
-        for i in range(1, self.max_iter+1):
+        for epoch in range(1, self.max_iter+1):
             yhat = sigmoid(np.dot(self.coef_, X.T) + self.bias_)
             cost = cross_entropy_loss(y, yhat)
 
@@ -47,7 +47,7 @@ class LogisticRegression:
             self.coef_ -= self.alpha * (dW.T)
             self.bias_ -= self.alpha * db
 
-            if i % 50 == 0: 
+            if epoch % 50 == 0: 
                 self.costs_.append(cost)
 
         self.__trained = True
@@ -96,10 +96,4 @@ class LogisticRegression:
         yhat = self.predict(X)
 
         return np.sum(y == yhat) / y.shape[0]
-
-            
-
-
-
-
 
