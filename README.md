@@ -11,6 +11,7 @@ A python package with implementations of Machine Learning algorithms from scratc
 
 ### Classification:
 1. *Logistic Regression* (`scratchml.classification.LogisticRegression`)
+2. *Support Vector Machine* (`scratchml.classification.SVM`)
 
 ----
 ## Installing:
