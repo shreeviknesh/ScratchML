@@ -2,10 +2,14 @@ class InvalidValueException(ValueError):
     """InvalidValueException is raised when a value passed as parameter is invalid.
     """
     def __init__(self, message):
-        self.expected = message['expected']
-        self.recieved = message['recieved']
+        if type(message) == dict:
+            self.expected = message['expected']
+            self.recieved = message['recieved']
 
-        self.message = f'Expected value in {self.expected} but recieved {self.recieved}'
+            self.message = f'Expected value in {self.expected} but recieved {self.recieved}'
+
+        else:
+            self.message = message
 
         super(InvalidValueException, self).__init__(self.message)
 

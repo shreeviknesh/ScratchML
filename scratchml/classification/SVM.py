@@ -77,7 +77,7 @@ class SVM:
         Returns:
             yhat (array): Predicted output values of shape (k,)
         """
-        if(self.__trained == False):
+        if self.__trained == False:
             raise ModelNotTrainedException(self.predict.__name__)
         
         X = np.array(X, 'float64')
