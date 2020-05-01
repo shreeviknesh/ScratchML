@@ -12,6 +12,7 @@ Algorithms Implemented:
 ### Classification:
 1. *Logistic Regression* (`scratchml.classification.LogisticRegression`)
 2. *Support Vector Machine* (`scratchml.classification.SVM`)
+3. *K-Nearest Neighbors* (`scratchml.classification.KNN`)
 
 Installing:
 ----
