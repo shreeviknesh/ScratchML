@@ -1,7 +1,6 @@
 import numpy as np
 from ..utils import ModelNotTrainedException, InvalidValueException
 from ..utils.distance import euclidean_distance
-from copy import deepcopy
 
 class KMeans:
     """KMeans Algorithm for Clustering
