@@ -19,6 +19,7 @@ Algorithms Implemented:
 
 ### Clustering:
 1. *KMeans Clustering* (`scratchml.clustering.KMeans`)
+1. *KMedoids Clustering* (`scratchml.clustering.KMedoids`)
 
 Installing:
 ----
