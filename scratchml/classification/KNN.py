@@ -1,6 +1,6 @@
 import numpy as np
 import operator
-from ..utils import euclidian_distance, ModelNotTrainedException, InvalidValueException
+from ..utils import euclidean_distance, ModelNotTrainedException, InvalidValueException
 
 class KNN:
     """K-Nearest Neighbors Algorithm for Classification.
@@ -49,7 +49,7 @@ class KNN:
     def get_class_labels(self, x):
         distances = []        
         for i in range(self.X.shape[0]):
-            distances.append((self.y[i], euclidian_distance(x, self.X[i])))
+            distances.append((self.y[i], euclidean_distance(x, self.X[i])))
         distances.sort(key=operator.itemgetter(1))
         
         votes = dict()
