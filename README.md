@@ -1,6 +1,10 @@
-ScratchML
-----
+# ScratchML
 A python package with implementations of Machine Learning algorithms from scratch.
+
+Contents
+----
+- [Algorithms Implemented](#algorithms-implemented)
+- [Installing](#installing)
 
 Algorithms Implemented:
 ----
@@ -12,6 +16,7 @@ Algorithms Implemented:
 ### Classification:
 1. *Logistic Regression* (`scratchml.classification.LogisticRegression`)
 2. *Support Vector Machine* (`scratchml.classification.SVM`)
+3. *K-Nearest Neighbors* (`scratchml.classification.KNN`)
 
 Installing:
 ----
@@ -19,5 +24,3 @@ The project is available as a package on PyPI - [ScratchML](https://pypi.org/pro
 
 To install it using pip:
 `pip install scratchml`
-
-----
