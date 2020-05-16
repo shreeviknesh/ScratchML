@@ -12,11 +12,13 @@ Algorithms Implemented:
 1. *Simple Linear Regression* (`scratchml.regression.SimpleLinearRegression`)
 2. *Multiple Linear Regression* (`scratchml.regression.MultipleLinearRegression`)
 
-
 ### Classification:
 1. *Logistic Regression* (`scratchml.classification.LogisticRegression`)
 2. *Support Vector Machine* (`scratchml.classification.SVM`)
 3. *K-Nearest Neighbors* (`scratchml.classification.KNN`)
+
+### Clustering:
+1. *KMeans Clustering* (`scratchml.clustering.KMeans`)
 
 Installing:
 ----
