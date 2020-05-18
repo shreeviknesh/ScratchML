@@ -10,7 +10,7 @@ if 'dist' in os.listdir():
 
 setup(
     name="scratchml", 
-    version="0.3.5",
+    version="0.3.7",
     author="Shreeviknesh Sankaran",
     author_email="shreeviknesh@gmail.com",
     description="A python package with implementations of Machine Learning algorithms from scratch.",
