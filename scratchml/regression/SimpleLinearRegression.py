@@ -92,7 +92,7 @@ class SimpleLinearRegression:
             raise InvalidValueException(message)
         
         return {
-            loss: error,
+            'loss': error,
             'score': r2 
         }
 
