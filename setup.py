@@ -1,5 +1,4 @@
 """ This file is used to create the binaries of the ScratchML package """
-
 import os
 import shutil
 from setuptools import setup, find_packages
