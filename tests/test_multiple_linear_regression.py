@@ -6,6 +6,9 @@ def test_initialization():
     mr = MultipleLinearRegression()
     assert isinstance(mr, MultipleLinearRegression)
 
+def test_test():
+    mr = MultipleLinearRegression()
+
 def test_simple_fit_and_predict():
     mr = MultipleLinearRegression()
     coef = np.random.randn(2,1)
@@ -29,7 +32,7 @@ def test_multple_fit_and_predict():
 
     x = np.random.randn(n_samples, n_features)
     y = bias + np.sum((weights * x), axis=1)
-    
+
     yhat = mr.fit(x, y).predict(x)
 
     assert np.isclose(mr.coef_, np.concatenate((np.array([bias]), weights))).all()
@@ -46,7 +49,7 @@ def test_evaluation():
 
     x = np.random.randn(n_samples, n_features)
     y = bias + np.sum((weights * x), axis=1)
-    
+
     mr.fit(x, y)
 
     assert mr.evaluate(x, y)['score'] == 1
