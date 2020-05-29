@@ -21,6 +21,9 @@ Algorithms Implemented:
 1. *KMeans Clustering* (`scratchml.clustering.KMeans`)
 1. *KMedoids Clustering* (`scratchml.clustering.KMedoids`)
 
+### Neural Networks:
+1. *Perceptron* (`scratchml.nn.Perceptron`)
+
 Installing:
 ----
 The project is available as a package on PyPI - [ScratchML](https://pypi.org/project/scratchml/)
