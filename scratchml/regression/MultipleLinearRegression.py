@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 from ..utils import mean_squared_error, mean_absolute_error, root_mean_squared_error
 from ..utils import InvalidValueException, ModelNotTrainedException
@@ -104,42 +103,4 @@ class MultipleLinearRegression:
             'loss': error,
             'score': r2 
         }
-
-    def visualize(self, X, y):
-        """Visualize the features along with actual and predicted outputs.
-
-        Args:
-            X (array-like): Evaluation data of shape (k,n)
-            y (array-like): Evaluation output of shape (k,)
-
-        Returns:
-            None
-        """
-        if(self.__trained == False):
-            raise ModelNotTrainedException(self.visualize.__name__)
-
-        X = np.array(X, 'float64')
-        y = np.array(y, 'float64')
-        yhat = self.predict(X)
-
-        if not len(X.shape) == 1 or X.shape[1] == 1:
-            X = np.mean(X, axis=1)
-
-        sorted_index_order = np.argsort(X)
-        X = X[sorted_index_order]
-        y = y[sorted_index_order]
-        yhat = yhat[sorted_index_order]
-
-        plt.figure(num=None, figsize=(7, 4), dpi=80, facecolor='w', edgecolor='k')
-        plt.title(self.__class__.__name__)
-        plt.plot(X, yhat, '#85144b', label="Actual Values", alpha=0.5)
-        plt.scatter(X, y, color='#2ECC40', label="Predicted Values", alpha=0.45)
-
-        plt.ticklabel_format(axis="both", style="sci", scilimits=(0,0))
-
-        plt.xlabel("Independent Variable")
-        plt.ylabel("Dependent Variable")
-        plt.legend()
-        
-        plt.show()
 

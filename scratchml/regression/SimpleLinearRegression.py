@@ -1,5 +1,4 @@
 import numpy as np
-import matplotlib.pyplot as plt
 
 from ..utils import mean_squared_error, mean_absolute_error, root_mean_squared_error
 from ..utils import InvalidValueException, ModelNotTrainedException
@@ -96,33 +95,3 @@ class SimpleLinearRegression:
             'score': r2 
         }
 
-    def visualize(self, x, y):
-        """Visualize the features along with actual and predicted outputs.
-
-        Args:
-            x (array-like): Evaluation data of shape (k,)
-            y (array-like): Evaluation output of shape (k,)
-
-        Returns:
-            None
-        """
-        if(self.__trained == False):
-            raise ModelNotTrainedException(self.visualize().__name__)
-
-        sorted_index_order = np.argsort(x)
-        x = np.array(x, 'float64')[sorted_index_order]
-        y = np.array(y, 'float64')[sorted_index_order]
-        yhat = self.predict(x)
-
-        plt.figure(num=None, figsize=(7, 4), dpi=80, facecolor='w', edgecolor='k')
-        plt.title(self.__class__.__name__)
-        plt.plot(x, yhat, '#85144b', label="Actual Values", alpha=0.5)
-        plt.scatter(x, y, color='#2ECC40', label="Predicted Values", alpha=0.45)
-
-        plt.ticklabel_format(axis="both", style="sci", scilimits=(0,0))
-
-        plt.xlabel("Independent Variable")
-        plt.ylabel("Dependent Variable")
-        plt.legend()
-        
-        plt.show()
